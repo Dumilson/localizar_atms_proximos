@@ -76,10 +76,12 @@ function addPlaces(places, map) {
         position: place.geometry.location,
       });
 
-      const li = document.createElement("li");
 
+      const li = document.createElement("li");
+      const p = document.createElement("p");
       li.textContent = place.name;
-      placesList.appendChild(li);
+      p.textContent = place.vicinity;
+      placesList.appendChild(li,p);
       li.addEventListener("click", () => {
         map.setCenter(place.geometry.location);
       });
