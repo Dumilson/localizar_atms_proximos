@@ -15,7 +15,7 @@
       <h2>Restultados</h2>
       <div>
         <form action="" method="post" id="form">
-          <input type="text" placeholder="Insira a Localização mais proxima" id="input_location">
+          <input type="text" placeholder="Insira a Localização mais proxima" id="input_location" oninput="getValue(this)">
         </form>
       </div>
       <ul id="places"></ul>
@@ -27,18 +27,6 @@
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsJ8vVyCoHrvZuGxuhcwhlDEZtevVyoo8&callback=initMap&libraries=places&v=weekly"
     async></script>
-
-  <script>
-
-    fetch("reques_api.php")
-      .then((resp) => resp.json())
-      .then(function (data) {
-        console.log(data)
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  </script>
 </body>
 
 </html>
