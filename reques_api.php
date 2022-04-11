@@ -10,6 +10,6 @@ $send_request = [
     'lng' => $get_location->lng,
 ];
 
-return $send_request;
+echo $send_request;
 
 ?>

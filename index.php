@@ -30,8 +30,8 @@
 
   <script>
 
-    fetch("reques_api.php")
-      .then((resp) => resp.json())
+    fetch("http://localhost/localizar_atms_proximos/reques_api.php")
+      .then((resp) => resp.text())
       .then(function (data) {
         console.log(data)
       })
