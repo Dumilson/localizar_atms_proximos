@@ -1,7 +1,7 @@
 
 <?php
 
-$url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&input=cazenga%20de%20Maio&inputtype=textquery&key=AIzaSyCsJ8vVyCoHrvZuGxuhcwhlDEZtevVyoo8';
+$url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry&input='.$_GET['location'].'&inputtype=textquery&key=AIzaSyCsJ8vVyCoHrvZuGxuhcwhlDEZtevVyoo8';
 $hg = file_get_contents($url);
 $response = json_decode($hg);
 $get_location = $response->candidates[0]->geometry->location;
@@ -10,6 +10,10 @@ $send_request = [
     'lng' => $get_location->lng,
 ];
 
+<<<<<<< HEAD
 echo $send_request;
+=======
+echo json_encode($send_request);
+>>>>>>> a43f09b6f500de099df64d878c9daee5134928c3
 
 ?>

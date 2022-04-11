@@ -1,6 +1,28 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+function getValue(data){
+ fetch("reques_api.php?location="+data.value)
+   .then((resp) => resp.json())
+   .then(function (data) {
+     console.log(data)
+     getLat(data.lat)
+     getLng(data.lng)
+   })
+   .catch(function (error) {
+     console.log(error);
+   });
+ }
+
+ function getLat(lat){
+  return lat
+ }
+ function getLng(lng){
+   return lng
+ }
+
 function initMap() {
 
   const pyrmont = { lat:-8.838370899999999, lng: 13.2216252 };
