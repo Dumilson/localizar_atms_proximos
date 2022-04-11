@@ -1,0 +1,45 @@
+.nav-item a {
+    margin: 10px;
+}
+
+.btn-primary {
+    background-color: #13569B !important;
+}
+
+.border-leff-code {
+    background-color: #43CCAE;
+    height: 65px;
+    margin: 7px;
+}
+
+.border-text-code {
+    border-bottom: 5px solid #43CCAE;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.border-text-code-about{
+    border-bottom: 5px solid #43CCAE;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.img-code{
+    object-fit: cover;
+    height: 300px;
+    width: 450px;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+.espace {
+    margin-left: 1px;
+}
+
+.color-custom {
+    color: #13569B !important;
+}
+
+
+.help{
+    margin: 60px;
+    margin-bottom: 100px;
+}

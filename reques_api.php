@@ -10,10 +10,7 @@ $send_request = [
     'lng' => $get_location->lng,
 ];
 
-<<<<<<< HEAD
-echo $send_request;
-=======
+
 echo json_encode($send_request);
->>>>>>> a43f09b6f500de099df64d878c9daee5134928c3
 
 ?>

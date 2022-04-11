@@ -1,31 +1,26 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+var lat;
+var lng
 
 function getValue(data){
  fetch("reques_api.php?location="+data.value)
    .then((resp) => resp.json())
    .then(function (data) {
-     console.log(data)
-     getLat(data.lat)
-     getLng(data.lng)
+      document.getElementById("places").innerHTML = ""
+      lat = data.lat 
+      lng = data.lng
+      setTimeout(initMap(lat,lng),1000)
    })
    .catch(function (error) {
      console.log(error);
    });
  }
 
- function getLat(lat){
-  return lat
- }
- function getLng(lng){
-   return lng
- }
+function initMap(lat,lng) {
 
-function initMap() {
-
-  const pyrmont = { lat:-8.838370899999999, lng: 13.2216252 };
+  var pyrmont = { lat:lat, lng:lng };
   const map = new google.maps.Map(document.getElementById("map"), {
     center: pyrmont,
     zoom: 17,
@@ -45,10 +40,10 @@ function initMap() {
 
   // Perform a nearby search.
   service.nearbySearch(
-    { location: pyrmont, radius: 1500, type: ['atm'] },
+    { location: pyrmont, radius: 500, type: ['atm'] },
     (results, status, pagination) => {
       if (status !== "OK" || !results) return;
-
+      console.log(results)
       addPlaces(results, map);
       moreButton.disabled = !pagination || !pagination.hasNextPage;
       if (pagination && pagination.hasNextPage) {
