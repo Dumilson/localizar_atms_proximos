@@ -11,5 +11,4 @@ $send_request = [
 ];
 
 echo json_encode($send_request);
-
 ?>

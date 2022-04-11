@@ -14,9 +14,7 @@
     <div id="sidebar">
       <h2>Restultados</h2>
       <div>
-        <form action="" method="post" id="form">
           <input type="text" placeholder="Insira a Localização mais proxima" id="input_location" oninput="getValue(this)">
-        </form>
       </div>
       <ul id="places"></ul>
       <button id="more">Mais Resultados</button>
